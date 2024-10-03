@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .autocomplete-container .geoapify-autocomplete-input {
+        @apply outline-none ring-orange-500 leading-[36px] h-[36px] pl-[2.5rem] pr-[1rem] border-none rounded-lg text-sm w-full;
+    }
+
+    .geoapify-autocomplete-items {
+        @apply absolute top-[calc(100%+2px)] left-0 right-0 bg-white border border-[rgba(0,0,0,0.1)] rounded-md overflow-hidden shadow-md z-99;
+    }
+
+    .autocomplete-container .geoapify-autocomplete-items div {
+        @apply relative p-2 cursor-pointer bg-white border border-[rgba(0,0,0,0.1)];
+    }
+
+    .geoapify-autocomplete-items div:hover {
+        @apply bg-[rgba(0,0,0,0.1)] ;
+    }
+
+    .geoapify-autocomplete-items .active {
+        @apply bg-[rgba(0,0,0,0.1)];
+    }
+
+    .geoapify-autocomplete-item {
+        @apply flex flex-row items-center;
+    }
+
+    .autocomplete-container .geoapify-autocomplete-item .icon {
+        @apply inline-block w-[40px] h-[24px] text-gray-300;
+    }
+
+    .geoapify-autocomplete-item .icon.emoji {
+        @apply text-current text-[20px] opacity-90;
+    }
+
+    .autocomplete-container .geoapify-close-button {
+        @apply absolute right-[1rem] top-0 h-full hidden items-center;
+    }
+
+    .geoapify-close-button.visible {
+        @apply flex;
+    }
+
+    .geoapify-close-button {
+        @apply text-[rgba(0,0,0,0.4)] cursor-pointer;
+    }
+
+    .geoapify-close-button:hover {
+        @apply text-[rgba(0,0,0,0.6)];
+    }
+
+    .geoapify-autocomplete-items .main-part .non-verified {
+        @apply text-red-500;
+    }
+
+    .geoapify-autocomplete-items .secondary-part {
+        @apply ml-2 text-sm text-[rgba(0,0,0,0.6)];
+    }
+}
