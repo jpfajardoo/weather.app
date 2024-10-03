@@ -1,6 +1,6 @@
 <script setup>
 import LoadingSpinner from './LoadingSpinner.vue';
-import { useWeatherService } from '@/Service/weatherService';
+import { useWeatherService } from '@/Services/weatherService';
 import { onMounted, watch } from 'vue';
 
 const props = defineProps({

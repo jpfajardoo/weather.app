@@ -8,7 +8,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 import { GeocoderAutocomplete } from '@geoapify/geocoder-autocomplete';
 import InputAddress from '@/Pages/Weather/Components/InputAddress.vue';
-import { useLocationService } from '@/Service/locationService';
+import { useLocationService } from '@/Services/locationService';
 
 const showingNavigationDropdown = ref(false);
 

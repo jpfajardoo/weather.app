@@ -3,7 +3,7 @@ import WelcomeLayout from '@/Layouts/WelcomeLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import WeatherCard from './Weather/Components/WeatherCard.vue';
 import WeatherForecastCard from './Weather/Components/WeatherForecastCard.vue';
-import { dateTimeService } from '@/Service/dateTimeService';
+import { dateTimeService } from '@/Services/dateTimeService';
 
 const formatTime = (date) => {
   return dateTimeService.formatTime(date);
