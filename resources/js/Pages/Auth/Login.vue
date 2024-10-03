@@ -96,7 +96,7 @@ const submit = () => {
                 </PrimaryButton>
             </div>
 
-            <div class="mt-4 text-center text-sm">
+            <div class="mt-4 text-center text-sm dark:text-gray-400">
                 Don't have an account?
                 <Link
                     :href="route('register')"

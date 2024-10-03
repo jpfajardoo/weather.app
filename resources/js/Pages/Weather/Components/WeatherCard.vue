@@ -1,6 +1,5 @@
 <script setup>
 import LoadingSpinner from './LoadingSpinner.vue';
-import { dateTimeService } from '@/Service/dateTimeService';
 import { useWeatherService } from '@/Service/weatherService';
 import { onMounted, watch } from 'vue';
 
@@ -9,10 +8,6 @@ const props = defineProps({
 });
 
 const { weather, isLoading, fetchWeatherData } = useWeatherService();
-
-const formatTime = (date) => {
-  return dateTimeService.formatTime(date);
-};
 
 onMounted(() => {
     fetchWeatherData(props.location.name, props.location.lat, props.location.lon);
@@ -26,12 +21,9 @@ watch(props.location, (newLocation) => {
 </script>
 
 <template>
-    <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
-        <div class="flex justify-between p-4 border-b border-gray-100 text-sm">
-            <span class="text-gray-500">
-                <slot name="title" />
-            </span>
-            <span>{{ formatTime(new Date) }}</span>
+    <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800 dark:text-white">
+        <div class="flex justify-between p-4 border-b border-gray-100 text-xs">
+            <slot name="header" />
         </div>
         <div class="p-4">
             <LoadingSpinner :isLoading="isLoading" />
@@ -41,7 +33,7 @@ watch(props.location, (newLocation) => {
                     <div class="flex items-center w-full">
                         <img :src="'https://openweathermap.org/img/wn/' + weather.icon + '@2x.png'">
                         <span class="text-6xl font-bold">{{ weather.temp }}°</span>
-                        <span class="text-xl font-bold text-gray-300 -ml-[19px] mt-7">C</span>
+                        <span class="text-xl font-bold text-gray-400 -ml-[19px] mt-7">C</span>
                     </div>
                     <div class="flex items-center w-full">
                         <span class="capitalize font-bold">{{ weather.description }}</span>

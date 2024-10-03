@@ -38,6 +38,7 @@ export function useWeatherService() {
         try {
             const weatherResponse = await fetch(`/weather?time=forecast&lat=${lat}&lon=${lon}&address=${address}`);
             const weatherData = await weatherResponse.json();
+console.log(weatherData);
             const currentDateTime = new Date();
             // Filter the forecast for times in the future and get the first n limit
             forecast.value = weatherData.list.filter(item => new Date(item.dt_txt) >= currentDateTime).slice(0, limit);
